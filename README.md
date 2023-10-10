@@ -33,6 +33,9 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 
 - Reclaiming the PV: After a PVC is deleted and the PV's data is safely handled according to the reclaim policy, the PV returns to the "Available" state and can be bound to a new PVC.
 
+---
+## Access Modes of PV
+
 
 
 
