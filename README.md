@@ -28,8 +28,10 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
   `Retain`: Data is not deleted, and the PV remains in an "Released" state.
 
   `Recycle` (deprecated): Data is deleted, but it's not securely wiped. This reclaim policy is not recommended.
-Delete: Data is securely deleted, and the PV is made "Available" for reuse.
-Reclaiming the PV: After a PVC is deleted and the PV's data is safely handled according to the reclaim policy, the PV returns to the "Available" state and can be bound to a new PVC.
+
+  `Delete`: Data is securely deleted, and the PV is made "Available" for reuse.
+
+- Reclaiming the PV: After a PVC is deleted and the PV's data is safely handled according to the reclaim policy, the PV returns to the "Available" state and can be bound to a new PVC.
 
 
 
