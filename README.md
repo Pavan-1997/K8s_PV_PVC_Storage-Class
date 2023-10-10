@@ -19,7 +19,7 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 
 - Using the Claim: With the PVC bound to a PV, it can be used within pods. Pods are defined to use the PVC as a volume, and the storage from the associated PV is mounted to the pod. The application running in the pod can read from and write to this storage.
 
-Expanding or Modifying the Claim (PVC): If additional storage capacity is required or if the access mode needs to be changed, the PVC can be modified to reflect the new requirements. Note that some changes, such as access mode changes, may not be possible without recreating the PVC.
+- Expanding or Modifying the Claim (PVC): If additional storage capacity is required or if the access mode needs to be changed, the PVC can be modified to reflect the new requirements. Note that some changes, such as access mode changes, may not be possible without recreating the PVC.
 
 Releasing the Claim (PVC): When the application or workload no longer needs the PVC, it can be deleted. Deleting the PVC does not immediately delete the associated data; it only releases the claim to the PV.
 
