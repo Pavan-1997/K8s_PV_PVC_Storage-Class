@@ -38,9 +38,9 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 
 - `ReadWriteOnce (RWO)`: This access mode allows the volume to be mounted as read-write by a single node (pod). In other words, only one pod running on one node can write to the volume, while other pods on different nodes can only mount it as read-only. RWO is typically used for scenarios where data must not be shared between multiple pods.
 
-- ReadOnlyMany (ROX): The ReadOnlyMany access mode allows the volume to be mounted as read-only by multiple nodes (pods). Multiple pods across different nodes can read data from the volume but cannot write to it. This is useful for scenarios where you want multiple pods to share the same read-only data, such as for scalability or redundancy.
+- `ReadOnlyMany (ROX)`: The ReadOnlyMany access mode allows the volume to be mounted as read-only by multiple nodes (pods). Multiple pods across different nodes can read data from the volume but cannot write to it. This is useful for scenarios where you want multiple pods to share the same read-only data, such as for scalability or redundancy.
 
-- ReadWriteMany (RWX): RWX is the most permissive access mode, allowing the volume to be mounted as read-write by multiple nodes (pods) simultaneously. All pods, regardless of which node they are running on, can both read from and write to the volume. This access mode is suitable for scenarios where data needs to be shared and modified by multiple pods running on different nodes.
+- `ReadWriteMany (RWX)`: RWX is the most permissive access mode, allowing the volume to be mounted as read-write by multiple nodes (pods) simultaneously. All pods, regardless of which node they are running on, can both read from and write to the volume. This access mode is suitable for scenarios where data needs to be shared and modified by multiple pods running on different nodes.
 
 
 
