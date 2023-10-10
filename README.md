@@ -15,9 +15,9 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 
 - Creating a PVC: Application developers create a PVC by defining it in a YAML file and specifying details such as storage size, access mode, and optionally, a storage class. The PVC is then deployed to the cluster.
 
-Binding (PVC): When a PVC is created, Kubernetes attempts to find a suitable PV that matches the PVC's requirements (capacity, access mode, and storage class). If a matching PV is available, the PVC enters the "Bound" state, and it is bound to the PV.
+- Binding (PVC): When a PVC is created, Kubernetes attempts to find a suitable PV that matches the PVC's requirements (capacity, access mode, and storage class). If a matching PV is available, the PVC enters the "Bound" state, and it is bound to the PV.
 
-Using the Claim: With the PVC bound to a PV, it can be used within pods. Pods are defined to use the PVC as a volume, and the storage from the associated PV is mounted to the pod. The application running in the pod can read from and write to this storage.
+- Using the Claim: With the PVC bound to a PV, it can be used within pods. Pods are defined to use the PVC as a volume, and the storage from the associated PV is mounted to the pod. The application running in the pod can read from and write to this storage.
 
 Expanding or Modifying the Claim (PVC): If additional storage capacity is required or if the access mode needs to be changed, the PVC can be modified to reflect the new requirements. Note that some changes, such as access mode changes, may not be possible without recreating the PVC.
 
