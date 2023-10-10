@@ -21,12 +21,13 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 
 - Expanding or Modifying the Claim (PVC): If additional storage capacity is required or if the access mode needs to be changed, the PVC can be modified to reflect the new requirements. Note that some changes, such as access mode changes, may not be possible without recreating the PVC.
 
-Releasing the Claim (PVC): When the application or workload no longer needs the PVC, it can be deleted. Deleting the PVC does not immediately delete the associated data; it only releases the claim to the PV.
+- Releasing the Claim (PVC): When the application or workload no longer needs the PVC, it can be deleted. Deleting the PVC does not immediately delete the associated data; it only releases the claim to the PV.
 
-Reclaim Policy (PV): Depending on the reclaim policy specified when the PV was created, the data associated with the PV is handled differently:
+- Reclaim Policy (PV): Depending on the reclaim policy specified when the PV was created, the data associated with the PV is handled differently:
 
-Retain: Data is not deleted, and the PV remains in an "Released" state.
-Recycle (deprecated): Data is deleted, but it's not securely wiped. This reclaim policy is not recommended.
+  `Retain`: Data is not deleted, and the PV remains in an "Released" state.
+
+  `Recycle` (deprecated): Data is deleted, but it's not securely wiped. This reclaim policy is not recommended.
 Delete: Data is securely deleted, and the PV is made "Available" for reuse.
 Reclaiming the PV: After a PVC is deleted and the PV's data is safely handled according to the reclaim policy, the PV returns to the "Available" state and can be bound to a new PVC.
 
