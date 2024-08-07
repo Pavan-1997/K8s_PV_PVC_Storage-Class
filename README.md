@@ -43,4 +43,36 @@ In Kubernetes, the lifecycle of a Persistent Volume (PV) and its associated Pers
 - `ReadWriteMany (RWX)`: RWX is the most permissive access mode, allowing the volume to be mounted as read-write by multiple nodes (pods) simultaneously. All pods, regardless of which node they are running on, can both read from and write to the volume. This access mode is suitable for scenarios where data needs to be shared and modified by multiple pods running on different nodes.
 
 
+---
+## Using Non-Persistent Empty Directory as Volume 
 
+1. Apply the Redis Empty Directory 
+```
+k apply -f redis_emp.yml
+```
+
+`k get pods`
+
+2. Login to the Redis Pod
+```
+k exec -it redis-pod -- sh
+```
+
+3. Create a File in Redis Pod - Install ps utility - Kill the Container and check then check the File created earlier
+```
+cd /data/redis
+ls
+echo "hello" > test.txt
+cat test.txt
+apt-get update && apt-get install procps -y
+ps -aux
+kill -9 1
+cat test.txt 
+```
+
+4. Now delete the pod and re-create the same pod and login to the Pod check directory path there will not be the file as created from Step3.
+
+
+## Using Persistent Volume
+
+1. 
