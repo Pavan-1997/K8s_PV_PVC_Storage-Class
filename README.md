@@ -130,4 +130,13 @@ spec:
           name: task-pv-storage
 ```
 
-
+4. Kind Cluster
+```
+apiVersion: kind.x-k8s.io/v1alpha4
+kind: Cluster
+nodes:
+  - role: control-plane
+    extraMounts:
+      - hostPath: /home/ubuntu/Desktop/Pavan-K8s/CKA_Piyush/day29
+        containerPath: /day29
+```
